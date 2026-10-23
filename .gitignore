@@ -1,0 +1,45 @@
+# Compiled executables
+31
+32
+33
+34a
+34b
+34c
+35
+36a
+36b
+37a
+37b
+38a
+38b
+39
+40
+41
+42
+43
+44a
+44b
+45
+46
+47
+48a
+48b
+49a
+49b
+49c
+49d
+50
+51a
+51b
+52a
+52b
+
+# Runtime artifacts
+fifo*
+myfifo*
+ticket.txt
+core
+core.*
+
+# Editor backups
+*~

@@ -1,0 +1,33 @@
+Name     : Bhumika
+Question : 36. Create a FIFO file using:
+           a. mknod command
+           b. mkfifo command
+           c. Use strace command to determine which command (mknod or mkfifo) is more efficient
+           d. mknod system call   -> see 36a.c
+           e. mkfifo library function -> see 36b.c
+
+-------------------------------------------------------------------
+a. mknod command
+-------------------------------------------------------------------
+$ mknod myfifo1 p
+$ ls -l myfifo1
+prw-r--r-- 1 user user 0 ... myfifo1          <- first letter 'p' = named pipe (FIFO)
+
+-------------------------------------------------------------------
+b. mkfifo command
+-------------------------------------------------------------------
+$ mkfifo myfifo2
+$ ls -l myfifo2
+prw-r--r-- 1 user user 0 ... myfifo2
+
+-------------------------------------------------------------------
+c. strace
+-------------------------------------------------------------------
+$ strace mknod myfifo3 p
+$ strace mkfifo myfifo4
+
+Both end up calling the same system call:   mknod("myfifo..", S_IFIFO|0666, 0)
+(on newer systems the call may appear as mknodat).
+mkfifo is just a wrapper (library function) around mknod(), so neither
+is really more efficient - mkfifo is simply easier, because we do not have to
+type 'p' or give the file type ourselves.
