@@ -33,7 +33,32 @@
 51b
 52a
 52b
+53a
+53b
+53c
+54
+55
+56
+57
+58
+59a
+59b
+59c
+59d
+59e
+59f
+59g
+60
+61a
+61b
+61c
+62
+63
+64a
+64b
 
+# Local-only viva notes
+VIVA_NOTES.md
 # Runtime artifacts
 fifo*
 myfifo*
@@ -43,3 +68,4 @@ core.*
 
 # Editor backups
 *~
+37.b
