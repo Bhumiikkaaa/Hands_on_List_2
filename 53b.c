@@ -10,10 +10,11 @@
 #include <signal.h>
 #include <sys/time.h>
 
-int count = 0;
+volatile sig_atomic_t count = 0;
 
 void handler(int sig)
 {
+    (void)sig;
     char msg[] = "ITIMER_VIRTUAL expired (SIGVTALRM)\n";
     write(1, msg, sizeof(msg) - 1);
     count++;
