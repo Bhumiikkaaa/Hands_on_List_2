@@ -10,6 +10,7 @@
 
 void handler(int sig)
 {
+    (void)sig;
     char msg[] = "Caught SIGFPE (divide by zero)\n";
     write(1, msg, sizeof(msg) - 1);
     _exit(1);
