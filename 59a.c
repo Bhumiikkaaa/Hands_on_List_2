@@ -10,6 +10,7 @@
 
 void handler(int sig)
 {
+    (void)sig;
     char msg[] = "Caught SIGSEGV (segmentation fault)\n";
     write(1, msg, sizeof(msg) - 1);
     _exit(1);                        // must exit, else the faulty instruction repeats forever
