@@ -10,6 +10,7 @@
 
 void handler(int sig)
 {
+    (void)sig;
     char msg[] = "Caught SIGINT (Ctrl+C)\n";
     write(1, msg, sizeof(msg) - 1);
     _exit(0);
